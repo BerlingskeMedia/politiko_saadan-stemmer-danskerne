@@ -1,0 +1,341 @@
+$grey: #E6E7E9;
+$dark-grey: #3f3f3f;
+
+voter-segregation {
+  display: block;
+
+  button {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:focus, &:focus:active {
+      outline: none !important;
+    }
+  }
+
+  nav {
+    position: relative;
+    margin-bottom: 10px;
+    display: block;
+
+    left-side {
+      @media (min-width: 531px) {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+
+    right-side {
+      display: block;
+      margin-top: 5px;
+
+      @media (min-width: 531px) {
+        float: right;
+      }
+    }
+
+    .btn {
+      font-size: 14px;
+      border: 1px solid #bcbec0;
+      background: #e6e7e8;
+      border-radius: 0px;
+      padding: 6px;
+
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      span {
+        display: inline-block;
+        background: #000;
+        color: #fff;
+        padding: 3px 12px;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+      }
+    }
+
+    .btn-round {
+      border-radius: 50%;
+      padding: 3px;
+
+      span {
+        border-radius: 50%;
+        padding: 1px 8px;
+      }
+    }
+
+    p {
+      display: inline;
+    }
+  }
+
+  segregation-info {
+    display: inline-block;
+    width: 100%;
+
+    .pull-left {
+      width: 100%;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+
+      info-label {
+        $arrow-width: 20px;
+        $arrow-height: 12px;
+
+        position: relative;
+        display: inline-block;
+        border: 1px solid $dark-grey;
+        border-radius: 2px;
+        padding: 5px 10px 7px 10px;
+        text-align: left;
+
+        &:after, &:before {
+        	top: 100%;
+        	left: 50%;
+        	border: solid transparent;
+        	content: " ";
+        	height: 0;
+        	width: 0;
+        	position: absolute;
+        	pointer-events: none;
+        }
+
+        &:after {
+        	margin-left: -$arrow-width;
+        	border: {
+           color: rgba(255, 255, 255, 0);
+           top-color: #fff;
+           top-width: $arrow-height;
+           right-width: $arrow-width;
+           bottom-width: $arrow-width;
+           left-width: $arrow-width;
+         }
+        }
+        &:before {
+        	margin-left: -$arrow-width - 1;
+        	border: {
+            color: rgba(255, 255, 255, 0);
+        	  top-color: $dark-grey;
+            top-width: $arrow-height + 1;
+            right-width: $arrow-width + 1;
+            bottom-width: $arrow-width + 1;
+            left-width: $arrow-width + 1;
+          }
+        }
+
+        strong {
+          display: block;
+          line-height: 18px;
+
+          &:first-letter {
+            text-transform: uppercase;
+          }
+
+          &:last-child {
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+
+  segregation-view {
+    display: inline-block;
+    width: 100%;
+
+    segregation-chart {
+      float: left;
+      width: 100%;
+      height: 500px;
+
+      @media (min-width: 768px) {
+        width: 50%;
+      }
+
+      @media (max-width: 991px) and (min-width: 768px) {
+        height: 400px;
+      }
+
+      @media (max-width: 500px) {
+        height: 380px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        .layout {
+          circle.filled {
+            fill: $dark-grey;
+          }
+
+          text {
+            font: {
+              size: 14.5px;
+              weight: bold;
+            }
+
+            @media (max-width: 380px) {
+              font-size: 11px;
+            }
+          }
+        }
+
+        .total-chart {
+          text {
+            font: {
+              weight: bold;
+              size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  segregation-menu {
+    $width: 310px;
+    $selectorMargin: 10px;
+    $selectorWidth: ($width - ($selectorMargin * 3)) / 2;
+    $selectorHeight: 250px;
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    width: $width + 2;
+    transform: translate3d(0, 0, 0);
+    border: 1px solid #000;
+    background: #fff;
+
+    menu-header {
+      display: inline-block;
+      user-select: none;
+      font-size: 12px;
+
+      .menu-tab {
+        float: left;
+        cursor: pointer;
+        background: #000;
+        color: #fff;
+        padding: 7px 12px;
+
+        &.active {
+          background: #fff;
+          color: #000;
+        }
+      }
+
+      menu-helper {
+        position: absolute;
+        top: 5px;
+        right: 35px;
+        cursor: move;
+        font-weight: lighter;
+
+        &:before {
+          font-family: FontAwesome;
+          content: "\f047";
+        }
+      }
+
+      .close {
+        position: absolute;
+        top: 0px;
+        right: 5px;
+        font-weight: lighter;
+      }
+    }
+
+    menu-selectors {
+      display: block;
+
+      .selector {
+        width: $selectorWidth;
+        background: #000;
+        color: #fff;
+        user-select: none;
+        margin: $selectorMargin;
+        float: left;
+        font: {
+          size: 10px;
+          weight: lighter;
+        }
+
+        &:first-child {
+          margin-right: 0;
+        }
+
+        ul {
+          list-style-type: none;
+          padding: 0;
+          display: block;
+          height: $selectorHeight;
+          overflow-y: scroll;
+        }
+
+        li {
+          padding: 2px 2px 2px 10px;
+          text-transform: uppercase;
+          cursor: pointer;
+
+          &.category:before {
+            font-family: FontAwesome;
+            content: "\f096";
+            margin-right: 8px;
+          }
+
+          &.active {
+            font-weight: bold;
+
+            &.category:before {
+              content: "\f0c8";
+            }
+          }
+        }
+      }
+    }
+  }
+
+  app-info {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 1;
+    max-width: 350px;
+    padding: 25px 10px 0 10px;
+    background: #fff;
+    border: 1px solid #000;
+    font-size: 12px;
+
+    .close {
+      position: absolute;
+      top: -4px;
+      right: 4px;
+      font-weight: lighter;
+    }
+
+    p {
+      display: block;
+    }
+  }
+}
+
+.d3-tip {
+  padding: 5px 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 5px;
+
+  p {
+    margin: 0;
+  }
+}

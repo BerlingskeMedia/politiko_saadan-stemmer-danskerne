@@ -1,0 +1,27 @@
+menu-header
+  .menu-tab.hidden-xs(
+    ng-class="{active: activeChart=='one'}"
+    ng-click="activeChart='one'"
+  ) DIAGRAM A
+  .menu-tab.hidden-xs(
+    ng-class="{active: activeChart=='two'}"
+    ng-click="activeChart='two'"
+  ) DIAGRAM B
+  menu-helper &nbsp; TRÆK MIG RUNDT
+  .close(ng-click="showMenu=false") &times;
+  .clearfix
+menu-selectors
+  .selector
+    ul
+      li.category(
+        ng-repeat="category in segregations"
+        ng-class="{active: activeCategory==$index}"
+        ng-click="changeCategory($index)"
+      ) {{category.label}}
+  .selector
+    ul
+      li.sub-category(
+        ng-repeat="subCategory in segregations[activeCategory].subs"
+        ng-click="changeView(subCategory)"
+      ) {{subCategory.label}}
+  .clearfix

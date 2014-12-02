@@ -1,0 +1,24 @@
+nav(role="navigation")
+  left-side
+    button.btn(ng-click="showMenu = true")
+      span VÆLG GRUPPE
+  right-side
+    button.btn.btn-round.hidden-xs(ng-click="showAppInfo=true")
+      span
+        i.fa.fa-info
+    p
+      | Data indsamlet: &nbsp;
+      strong juni 2014 til november 2014
+  segregation-menu(ng-show="showMenu")
+  app-info(ng-show="showAppInfo")
+    .close(ng-click="showAppInfo=false") &times;
+    p "Sådan stemmer danskerne" er en grafisk illustration af, hvordan forskellige undergrupper i den danske befolkning ville sammensætte Folketinget, hvis det udelukkende var dem, der kunne stemme til folketingsvalg.
+    p Grafikken bygger på data fra TNS Gallup, der er indsamlet via webbaserede interviews med danskere på 18 år og derover.
+    p For at sikre en tilstrækkelig kvalitet i de data, der ligger bag grafikkerne, har Gallup fastsat en grænse på minimum 100 respondenter i hver gruppe. Det betyder konkret, at ingen af de tal, der figurerer i grafikken, er baseret på færre end 100 respondenter. Der er dog stadig en statistisk usikkerhed på tallene. For enkelte tal kan denne være på helt op til +/- 7 procent.
+    p Blokkenes tilslutning vil i nogle tilfælde ikke give 100 procent, hvis de lægges sammen. Dette skyldes afrunding. Det enkelte partis tilslutning er afrundet til ét decimal i den grafiske fremstilling, hvilket betyder, at udregningen af blokkenes tilslutning ikke altid summerer til 100. Denne procedure er aftalt med Gallup.
+    p For spørgsmål, kommentarer eller andet skriv til research@berlingske.dk
+  .clearfix
+segregation-info
+segregation-view
+  segregation-chart(data="view.one" chart-id="one")
+  segregation-chart.hidden-xs(data="view.two" chart-id="two")
