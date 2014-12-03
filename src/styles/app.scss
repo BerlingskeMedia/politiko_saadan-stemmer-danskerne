@@ -24,6 +24,11 @@ voter-segregation {
         float: left;
         margin-right: 20px;
       }
+
+      p {
+        display: inline;
+        margin-left: 20px;
+      }
     }
 
     right-side {
@@ -67,10 +72,6 @@ voter-segregation {
         border-radius: 50%;
         padding: 1px 8px;
       }
-    }
-
-    p {
-      display: inline;
     }
   }
 

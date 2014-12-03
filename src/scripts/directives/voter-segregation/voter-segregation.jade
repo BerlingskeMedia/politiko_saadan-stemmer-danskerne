@@ -2,13 +2,13 @@ nav(role="navigation")
   left-side
     button.btn(ng-click="showMenu = true")
       span VÆLG GRUPPE
+    p
+      | Data indsamlet: &nbsp;
+      strong juni 2014 til november 2014
   right-side
     button.btn.btn-round.hidden-xs(ng-click="showAppInfo=true")
       span
         i.fa.fa-info
-    p
-      | Data indsamlet: &nbsp;
-      strong juni 2014 til november 2014
   segregation-menu(ng-show="showMenu")
   app-info(ng-show="showAppInfo")
     .close(ng-click="showAppInfo=false") &times;
