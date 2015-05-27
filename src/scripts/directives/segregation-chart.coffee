@@ -77,7 +77,7 @@ angular.module "segregationChartDirective", []
         logoMargin = 20
         sliceWidth = (pi * 2) / renderData.length
         sliceStart = 0
-        radius = (Math.min(width, height) / 2) - (logoMargin * 2)
+        radius = (Math.min(width, height) / 2) - (logoMargin * 2) - 30
         innerRadius = 72.5
         maxValue = d3.max renderData, (d) -> d.value
         blockWidth = radius * 2
