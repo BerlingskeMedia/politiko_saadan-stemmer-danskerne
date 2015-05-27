@@ -1,4 +1,11 @@
 
+1.2.0 / 2015-05-27
+==================
+
+  * adding a new data feed from Gallup
+  * new parti logos
+  * adding air
+
 1.1.0 / 2015-03-30
 ==================
 
