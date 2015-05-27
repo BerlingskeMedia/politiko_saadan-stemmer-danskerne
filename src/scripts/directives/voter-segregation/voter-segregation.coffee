@@ -23,7 +23,7 @@ angular.module "voterSegregationDirective", []
         scope.view[scope.activeChart].subCategory = sub.label
         scope.view[scope.activeChart].data = sub.data
 
-      $http.get "/upload/tcarlsen/voter-segregation/POLIT2013V1PROFILBERL_JUN14_NOV14B.json"
+      $http.get "/upload/tcarlsen/voter-segregation/POLIT2013V1PROFILBERL_NOV14_APR15B_med_blok.json"
         .then (response) ->
           scope.segregations = reformatter.format response.data
           scope.view.one =
