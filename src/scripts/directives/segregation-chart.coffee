@@ -12,6 +12,7 @@ angular.module "segregationChartDirective", []
       svg = d3.select(element[0]).append "svg"
       partyColors =
         "Ø": "#731525"
+        "Å": "#5AFF5A"
         F: "#9C1D2A"
         A: "#E32F3B"
         B: "#E52B91"

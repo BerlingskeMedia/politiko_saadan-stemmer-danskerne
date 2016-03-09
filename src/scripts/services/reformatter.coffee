@@ -16,7 +16,7 @@ angular.module "reformatService", []
 
         # renaming
         if category is "hvad er din egen sidst afsluttede uddannelse ?"
-          category = "uddandelsesniveau"
+          category = "uddannelsesniveau"
         else if category is "hvilken form for bolig bor du i ?"
           category = "boligform"
         else if category is "bor du i en ejer-, andels- eller lejerbolig ?"
