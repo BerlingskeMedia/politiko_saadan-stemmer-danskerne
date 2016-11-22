@@ -80,7 +80,7 @@ gulp.task('images', function () {
   return gulp.src('src/images/**')
     .pipe(plumber())
     .pipe(gulpif(!build, changed('app/img')))
-    .pipe(imagemin())
+    // .pipe(imagemin())
     .pipe(gulp.dest(dest + '/img'))
     .pipe(connect.reload());
 });
@@ -101,15 +101,25 @@ gulp.task('connect', function () {
 });
 /* CORS Proxy */
 gulp.task('corsproxy', function () {
-  require('corsproxy/bin/index');
+  require('corsproxy/bin/corsproxy');
 });
 /* Build task */
 gulp.task('build', function () {
-  build = true;
-  dest = 'build';
-
-  del(dest);
-  gulp.start('scripts', 'styles', 'dom', 'images');
+  if (process.argv.indexOf('--production') > -1){
+    build = true;
+    dest = 'build';
+    del(dest);
+    console.log('Building into ./' + dest);
+    gulp.start('scripts', 'styles', 'dom', 'images');
+  } else {
+    build = false;
+    dest = 'app/upload/tcarlsen/voter-segregation';
+    console.log('Building into ./' + dest);
+    gulp.start('scripts', 'styles', 'dom', 'images');
+  }
 });
+
+gulp.task('serve', ['corsproxy', 'connect']);
+
 /* Default task */
 gulp.task('default', ['corsproxy', 'connect', 'scripts', 'styles', 'dom', 'images', 'watch']);
