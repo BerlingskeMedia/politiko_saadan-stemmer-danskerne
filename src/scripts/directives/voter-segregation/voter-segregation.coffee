@@ -23,7 +23,10 @@ angular.module "voterSegregationDirective", []
         scope.view[scope.activeChart].subCategory = sub.label
         scope.view[scope.activeChart].data = sub.data
 
-      $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_SEP15_FEB16B.json"
+      scope.dataLabel = 'fra oktober 2016 - november 2016'
+
+      $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_OKT16_NOV16B.json"
+      # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_SEP15_FEB16B.json"
       # $http.get "/upload/tcarlsen/voter-segregation/POLIT2013V1PROFILBERL_NOV14_APR15B_med_blok.json"
         .then (response) ->
           scope.segregations = reformatter.format response.data
