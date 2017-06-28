@@ -84,6 +84,16 @@ gulp.task('images', function () {
     .pipe(gulp.dest(dest + '/img'))
     .pipe(connect.reload());
 });
+/* Moving datafiles to app */
+gulp.task('data', function () {
+  gulp.src('data/*')
+  .pipe(gulp.dest(dest));
+});
+/* Moving the local files to app */
+gulp.task('app', function () {
+  gulp.src('app_skeleton/**/*')
+  .pipe(gulp.dest('app'));
+});
 /* Watch task */
 gulp.task('watch', function () {
   gulp.watch('src/**/*.coffee', ['scripts']);
@@ -115,11 +125,11 @@ gulp.task('build', function () {
     build = false;
     dest = 'app/upload/tcarlsen/voter-segregation';
     console.log('Building into ./' + dest);
-    gulp.start('scripts', 'styles', 'dom', 'images');
+    gulp.start('scripts', 'styles', 'dom', 'images', 'app', 'data');
   }
 });
 
 gulp.task('serve', ['corsproxy', 'connect']);
 
 /* Default task */
-gulp.task('default', ['corsproxy', 'connect', 'scripts', 'styles', 'dom', 'images', 'watch']);
+gulp.task('default', ['corsproxy', 'connect', 'scripts', 'styles', 'dom', 'images', 'watch', 'app', 'data']);

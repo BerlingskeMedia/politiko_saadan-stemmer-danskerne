@@ -1,5 +1,7 @@
 # Sådan stemmer danskerne
 
+Aka. voter-segregation
+
 [https://berlingskemedia.atlassian.net/wiki/pages/viewpage.action?pageId=112132141](https://berlingskemedia.atlassian.net/wiki/pages/viewpage.action?pageId=112132141)
 
 ![preview](https://cloud.githubusercontent.com/assets/145288/5262689/0907e77e-7a29-11e4-9049-52f5c7e89fee.png)
