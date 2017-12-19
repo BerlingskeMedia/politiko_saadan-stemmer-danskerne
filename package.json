@@ -9,8 +9,8 @@
     "url": "https://github.com/BerlingskeMedia/voter-segregation"
   },
   "scripts": {
-    "start" : "gulp serve",
-    "postinstall" : "bower install"
+    "start": "gulp serve",
+    "postinstall": "bower install"
   },
   "devDependencies": {
     "corsproxy": "^1.5.0",
