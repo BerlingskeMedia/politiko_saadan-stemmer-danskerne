@@ -23,7 +23,7 @@ angular.module "voterSegregationDirective", []
         scope.view[scope.activeChart].subCategory = sub.label
         scope.view[scope.activeChart].data = sub.data
 
-      scope.dataLabel = 'fra juni 2017 - december 2017'
+      scope.dataLabel = 'oktober 2017 - december 2017'
 
       $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_DEC17B.json"
       # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_MAR17_MAJ17B.json"
