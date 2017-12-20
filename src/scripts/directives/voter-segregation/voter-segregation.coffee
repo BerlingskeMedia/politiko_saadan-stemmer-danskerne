@@ -25,7 +25,8 @@ angular.module "voterSegregationDirective", []
 
       scope.dataLabel = 'oktober 2017 - december 2017'
 
-      $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_DEC17B.json"
+      $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_OKT17_DEC17B.json"
+      # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_DEC17B.json"
       # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_MAR17_MAJ17B.json"
       # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_OKT16_NOV16B.json"
       # $http.get "/upload/tcarlsen/voter-segregation/POLIT2015V1PROFILBERL_SEP15_FEB16B.json"
